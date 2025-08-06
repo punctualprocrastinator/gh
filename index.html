@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Researcher Portfolio - Exploring the frontiers of artificial intelligence and machine learning">
+    <meta name="keywords" content="AI, Machine Learning, Research, Portfolio, Data Science">
+    <meta name="author" content="AI Researcher">
+    <title>AI Researcher Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body class="font-inter overflow-x-hidden">
+    
+
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 bg-[var(--bg-primary)] z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="mt-4 text-sm font-mono">Initializing portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white z-40 transition-all duration-300"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-[var(--bg-primary)] bg-opacity-95 backdrop-blur-sm z-30 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-mono font-bold hover:text-[var(--text-muted)] transition-colors">
+                        <span class="text-[var(--text-primary)]">&lt;</span>AI<span class="text-[var(--text-primary)]">/&gt;</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="research.html" class="nav-link">Research</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-[var(--text-primary)]" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="md:hidden bg-[var(--bg-primary)] bg-opacity-95 backdrop-blur-sm hidden" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#home" class="block nav-link">Home</a>
+                <a href="about.html" class="block nav-link">About</a>
+                <a href="projects.html" class="block nav-link">Projects</a>
+                <a href="research.html" class="block nav-link">Research</a>
+                <a href="blog.html" class="block nav-link">Blog</a>
+                <a href="contact.html" class="block nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 opacity-20">
+            <object type="image/svg+xml" data="assets/images/ai_gpu_animation.svg" class="w-full h-full"></object>
+        </div>
+        
+        <div class="text-center z-10 max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="font-mono text-[var(--text-primary)]">Hello, I'm</span>
+                <br>
+                <svg id="name-svg" viewBox="0 0 800 100" class="w-full h-auto">
+                    <text x="50%" y="50%" dy=".35em" text-anchor="middle" class="name-text"></text>
+                </svg>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto leading-relaxed">
+                Data Science student at IIT Madras | AI Research Intern | Building the future of fair and ethical AI systems.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="projects.html" class="btn-primary">
+                    <i class="fas fa-code mr-2"></i>
+                    View Projects
+                </a>
+                <a href="research.html" class="btn-secondary">
+                    <i class="fas fa-flask mr-2"></i>
+                    Research Papers
+                </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mt-12">
+                <a href="#" class="social-link" title="GitHub">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="social-link" title="Google Scholar">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-20 bg-gradient-to-b from-[var(--bg-primary)] to-[var(--bg-secondary)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Featured Projects</h2>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+                    Cutting-edge AI and ML projects that push the boundaries of what's possible.
+                </p>
+            </div>
+            
+            <div id="featured-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="projects.html" class="btn-secondary">
+                    <i class="fas fa-arrow-right mr-2"></i>
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="py-20 bg-[var(--bg-primary)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Latest Insights</h2>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+                    Thoughts and discoveries from the world of AI research.
+                </p>
+            </div>
+            
+            <div id="latest-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog posts will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="blog.html" class="btn-secondary">
+                    <i class="fas fa-arrow-right mr-2"></i>
+                    Read All Posts
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-[var(--bg-secondary)] to-[var(--bg-primary)]">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Collaborate</h2>
+            <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+                Interested in working together on AI research or have a project in mind? Let's connect and explore the possibilities.
+            </p>
+            <a href="contact.html" class="btn-primary">
+                <i class="fas fa-envelope mr-2"></i>
+                Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--bg-primary)] border-t border-[var(--border-color)] py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-mono font-bold mb-4">
+                        <span class="text-[var(--text-primary)]">&lt;</span>AI<span class="text-[var(--text-primary)]">/&gt;</span> Researcher
+                    </h3>
+                    <p class="text-[var(--text-secondary)] mb-4">
+                        Advancing the field of artificial intelligence through innovative research and practical applications.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">About</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="research.html" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-[var(--border-color)] mt-8 pt-8 text-center">
+                <p class="text-[var(--text-secondary)]">
+                    © 2025 AI Researcher Portfolio. Built with passion for AI and clean code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[var(--text-primary)] text-[var(--bg-primary)] p-3 rounded-full shadow-lg hover:bg-[var(--text-secondary)] transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

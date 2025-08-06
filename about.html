@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About AI Researcher - Background, education, experience, and research journey">
+    <title>About - AI Researcher Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body class="font-inter">
+    
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[var(--text-primary)] z-40 transition-all duration-300"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-[var(--bg-primary)] bg-opacity-95 backdrop-blur-sm z-30 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-mono font-bold hover:text-[var(--text-muted)] transition-colors">
+                        <span class="text-[var(--text-primary)]">&lt;</span>AI<span class="text-[var(--text-primary)]">/&gt;</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="research.html" class="nav-link">Research</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-[var(--text-primary)]" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="md:hidden bg-[var(--bg-primary)] bg-opacity-95 backdrop-blur-sm hidden" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block nav-link">Home</a>
+                <a href="about.html" class="block nav-link active">About</a>
+                <a href="projects.html" class="block nav-link">Projects</a>
+                <a href="research.html" class="block nav-link">Research</a>
+                <a href="blog.html" class="block nav-link">Blog</a>
+                <a href="contact.html" class="block nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-b from-[var(--bg-primary)] to-[var(--bg-secondary)]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in">About Me</h1>
+            <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto fade-in">
+                Passionate about pushing the boundaries of artificial intelligence and creating meaningful impact through innovative research.
+            </p>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="py-16 bg-[var(--bg-secondary)]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <!-- Profile Image and Basic Info -->
+                <div class="lg:col-span-1 text-center slide-in-left">
+                    <div class="w-64 h-64 mx-auto mb-8 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-[var(--text-muted)]"></i>
+                    </div>
+                    <h2 id="profile-name" class="text-2xl font-bold mb-2">Loading...</h2>
+                    <p id="profile-title" class="text-lg text-[var(--text-secondary)] mb-4">Loading...</p>
+                    <p id="profile-location" class="text-[var(--text-secondary)] mb-6">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Loading...
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div id="social-links" class="flex justify-center space-x-4 mb-8">
+                        <!-- Social links will be loaded dynamically -->
+                    </div>
+                    
+                    <!-- Resume Download -->
+                    <a href="#" id="resume-link" class="btn-primary">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Resume
+                    </a>
+                </div>
+                
+                <!-- Bio and Details -->
+                <div class="lg:col-span-2 slide-in-right">
+                    <div class="bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Biography</h3>
+                        <p id="profile-bio" class="text-[var(--text-secondary)] leading-relaxed mb-8">
+                            Loading biography...
+                        </p>
+                        
+                        <!-- Research Interests -->
+                        <h4 class="text-xl font-semibold mb-4">Research Interests</h4>
+                        <div id="research-interests" class="flex flex-wrap gap-2 mb-8">
+                            <!-- Research interests will be loaded dynamically -->
+                        </div>
+                        
+                        <!-- Achievements -->
+                        <h4 class="text-xl font-semibold mb-4">Key Achievements</h4>
+                        <ul id="achievements-list" class="space-y-2 text-[var(--text-secondary)]">
+                            <!-- Achievements will be loaded dynamically -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-[var(--bg-primary)]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">My Journey</h2>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+                    A timeline of my educational background and professional experience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Education Timeline -->
+                <div class="slide-in-left">
+                    <h3 class="text-2xl font-bold mb-8 text-center">Education</h3>
+                    <div id="education-timeline" class="timeline">
+                        <!-- Education items will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Experience Timeline -->
+                <div class="slide-in-right">
+                    <h3 class="text-2xl font-bold mb-8 text-center">Experience</h3>
+                    <div id="experience-timeline" class="timeline">
+                        <!-- Experience items will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gradient-to-r from-[var(--bg-secondary)] to-[var(--bg-primary)]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Skills & Expertise</h2>
+                <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+                    Technical skills and areas of specialization that drive my research and development.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Programming Languages -->
+                <div class="skill-category fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-center">
+                        <i class="fas fa-code text-2xl mb-2 block"></i>
+                        Programming
+                    </h3>
+                    <div id="programming-skills" class="space-y-3">
+                        <!-- Programming skills will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- ML Frameworks -->
+                <div class="skill-category fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-center">
+                        <i class="fas fa-brain text-2xl mb-2 block"></i>
+                        ML Frameworks
+                    </h3>
+                    <div id="ml-skills" class="space-y-3">
+                        <!-- ML framework skills will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Specializations -->
+                <div class="skill-category fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-center">
+                        <i class="fas fa-microscope text-2xl mb-2 block"></i>
+                        Specializations
+                    </h3>
+                    <div id="specialization-skills" class="space-y-3">
+                        <!-- Specialization skills will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skill-category fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-center">
+                        <i class="fas fa-tools text-2xl mb-2 block"></i>
+                        Tools & Platforms
+                    </h3>
+                    <div id="tools-skills" class="space-y-3">
+                        <!-- Tools skills will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability Section -->
+    <section class="py-20 bg-[var(--bg-primary)]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Current Availability</h2>
+            <div id="availability-status" class="bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] rounded-lg p-8">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+                Interested in collaboration, research opportunities, or just want to discuss AI? I'd love to hear from you.
+            </p>
+            <a href="contact.html" class="btn-primary">
+                <i class="fas fa-envelope mr-2"></i>
+                Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--bg-primary)] border-t border-[var(--border-color)] py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-mono font-bold mb-4">
+                        <span class="text-[var(--text-primary)]">&lt;</span>AI<span class="text-[var(--text-primary)]">/&gt;</span> Researcher
+                    </h3>
+                    <p class="text-[var(--text-secondary)] mb-4">
+                        Advancing the field of artificial intelligence through innovative research and practical applications.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">About</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="research.html" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-[var(--border-color)] mt-8 pt-8 text-center">
+                <p class="text-[var(--text-secondary)]">
+                    © 2025 AI Researcher Portfolio. Built with passion for AI and clean code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[var(--text-primary)] text-[var(--bg-primary)] p-3 rounded-full shadow-lg hover:bg-[var(--text-secondary)] transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>
